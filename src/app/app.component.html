@@ -1,2 +1,17 @@
 <mat-toolbar color="primary">The Jokes App</mat-toolbar>
-<app-joke *ngFor="let objJoke of jokes" [joke]="objJoke"></app-joke>
+<div fxLayout fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <mat-label>Filter</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="Enter search text"
+      color="primary"
+      [(ngModel)]="filterStr"
+    />
+  </mat-form-field>
+</div>
+<app-joke
+  *ngFor="let objJoke of jokes | filter: filterStr"
+  [joke]="objJoke"
+></app-joke>

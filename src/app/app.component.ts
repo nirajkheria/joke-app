@@ -9,7 +9,7 @@ import { JokeService } from "./joke.service";
 })
 export class AppComponent implements OnInit {
   jokes: Joke[];
-
+  filterStr = "";
   constructor(private jokeService: JokeService) {}
 
   ngOnInit() {
