@@ -4,6 +4,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 @NgModule({
   declarations: [],
@@ -12,8 +13,15 @@ import { MatInputModule } from "@angular/material/input";
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule
   ],
-  exports: [MatCardModule, MatToolbarModule, MatButtonModule, MatInputModule]
+  exports: [
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatExpansionModule
+  ]
 })
 export class MaterialModule {}

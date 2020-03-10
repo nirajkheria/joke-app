@@ -1,4 +1,5 @@
 <mat-toolbar color="primary">The Jokes App</mat-toolbar>
+
 <div fxLayout fxLayoutAlign="center center">
   <mat-form-field fxFlex="40%">
     <mat-label>Filter</mat-label>
@@ -9,9 +10,24 @@
       color="primary"
       [(ngModel)]="filterStr"
     />
+    <mat-hint align="end" *ngIf="filterStr != ''"
+      >{{ (jokes | filter: filterStr).length }} /{{
+        jokes.length
+      }}
+      matched</mat-hint
+    >
   </mat-form-field>
 </div>
-<app-joke
-  *ngFor="let objJoke of jokes | filter: filterStr"
-  [joke]="objJoke"
-></app-joke>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let jokeType of jokeTypes">
+    <mat-expansion-panel-header class="panel-header">
+      {{ jokeType | uppercase }}
+    </mat-expansion-panel-header>
+
+    <app-joke
+      *ngFor="let objJoke of getJokes(jokeType) | filter: filterStr"
+      [joke]="objJoke"
+    ></app-joke>
+  </mat-expansion-panel>
+</mat-accordion>
