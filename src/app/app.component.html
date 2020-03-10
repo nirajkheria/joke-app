@@ -1,1 +1,2 @@
-<app-joke></app-joke>
+<mat-toolbar color="primary">The Jokes App</mat-toolbar>
+<app-joke *ngFor="let objJoke of jokes" [joke]="objJoke"></app-joke>
