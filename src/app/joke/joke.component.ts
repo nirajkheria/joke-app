@@ -8,6 +8,7 @@ import { Joke } from "../joke.model";
 })
 export class JokeComponent implements OnInit {
   @Input() joke: Joke;
+  showPunchLine = false;
 
   constructor() {}
 

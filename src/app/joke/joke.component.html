@@ -8,11 +8,21 @@
           </p></mat-card-title
         >
         <mat-card-subtitle>{{ joke.type }}</mat-card-subtitle>
-        <mat-card-content
+        <mat-card-content *ngIf="showPunchLine"
           ><p>
             {{ joke.punchline }}
           </p></mat-card-content
         >
+        <mat-card-actions>
+          <button
+            type="button"
+            mat-raised-button
+            color="accent"
+            (click)="showPunchLine = !showPunchLine"
+          >
+            {{ !showPunchLine ? "Show " : "Hide " }} Punchline
+          </button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>
